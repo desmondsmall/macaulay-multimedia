@@ -2,6 +2,32 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Auth0
+
+This app uses `@auth0/auth0-react`.
+
+### Local dev
+
+1. Install deps:
+   - `npm install`
+2. Create a `.env` from `.env.example` and set:
+   - `VITE_AUTH0_DOMAIN`
+   - `VITE_AUTH0_CLIENT_ID`
+   - (optional) `VITE_AUTH0_AUDIENCE`
+3. Run:
+   - `npm run dev`
+
+### Netlify
+
+Vite only exposes env vars prefixed with `VITE_`, so make sure your Netlify
+environment variables include at least:
+
+- `VITE_AUTH0_DOMAIN`
+- `VITE_AUTH0_CLIENT_ID`
+- (optional) `VITE_AUTH0_AUDIENCE`
+
+This repo also includes an SPA redirect in `netlify.toml` so deep links work.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
